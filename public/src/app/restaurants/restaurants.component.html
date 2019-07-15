@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<button [routerLink]="['/restaurants/new']">New restaurant</button>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Restaurant</th>
+            <th scope="col">Cuisine</th>
+            <th scope="col">Actions available</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let restaurant of restaurants">
+            <td>{{restaurant.name}}</td>
+            <td>{{restaurant.cuisine}}</td>
+            <td><button routerLink="/restaurants/{{restaurant._id}}">Read reviews</button> | <button routerLink="/restaurants/{{restaurant._id}}/edit">Update</button> | <button (click)="delete(restaurant._id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>

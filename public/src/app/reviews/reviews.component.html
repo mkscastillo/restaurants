@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h4>Reviews for {{restaurant.name}}</h4>
+<hr>
+<button routerLink="/restaurants/{{restaurant._id}}/review">New review</button>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Customer</th>
+            <th scope="col">Stars</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let review of restaurant.reviews">
+            <td>{{review.author}}</td>
+            <td>{{review.stars}}</td>
+            <td>{{review.review}}</td>
+        </tr>
+    </tbody>
+</table>

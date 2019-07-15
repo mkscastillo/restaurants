@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h4>Write a review for {{restaurant}}</h4>
+<hr>
+<form (submit)="create()">
+    <p>Your Name: <input type="text" name="review.author" [(ngModel)]="review.author"></p>
+    <p>Stars:<select name="review.stars" [(ngModel)]="review.stars">
+        <option>5</option>
+        <option>4</option>
+        <option>3</option>
+        <option>2</option>
+        <option>1</option>
+    </select></p>
+    <p>Your review review: <input type="text" name="review.review" [(ngModel)]="review.review"></p>
+    <p id="error" *ngIf="msg_error">{{msg_error}}</p>
+    <input type="submit" value="Submit"> <button (click)="cancel()">Cancel</button>
+</form>
